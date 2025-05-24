@@ -1,0 +1,1 @@
+// we are going to use the switch statement to register/login according to the  role of the users
