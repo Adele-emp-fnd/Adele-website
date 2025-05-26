@@ -66,7 +66,9 @@ const transporter = nodemailer.createTransport({
 
 
 // Endpoint that receives the user’s email and forwards it to you
-
+app.get("/", (req, res)=>{
+  res.send("welcome to adele empowerment foundation")
+})
 const LIST_ID = process.env.MAILCHIMP_LIST_ID;
 app.post('/submit-email', async (req, res) => {
   console.log("submit email route hitted!!!");
