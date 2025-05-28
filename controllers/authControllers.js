@@ -25,7 +25,6 @@ const authControllers = {
         const { email, password } = req.body;
         console.log(email, password);
 
-
         const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
         const checkUser = result.rows;
 
