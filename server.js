@@ -22,6 +22,8 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+app.options('*', cors());
+
 app.use(cors({
   origin: 'https://adeleempowermentfoundation.org',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
