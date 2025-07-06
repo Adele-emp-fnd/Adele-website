@@ -22,11 +22,21 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+const allowedOrigins = ['https://adeleempowermentfoundation.org'];
+
 app.use(cors({
-  origin: 'https://adeleempowermentfoundation.org',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
 }));
 
+// Make sure OPTIONS requests are handled globally
 app.options('*', cors());
 
 app.use(express.json());

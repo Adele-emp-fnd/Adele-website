@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import db from "../config/db.js";
 import sha256 from 'crypto-js/sha256.js';
 import nodemailer from "nodemailer";
